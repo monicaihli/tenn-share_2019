@@ -7,6 +7,7 @@ import pandas
 from nltk.corpus import stopwords # removes unimportant words
 from nltk.stem import WordNetLemmatizer # converts words to their lemma (standardized) form
 from nltk import FreqDist  # allows us to report frequency of words in text
+import datetime
 
 from nltk.tokenize import word_tokenize
 
@@ -56,6 +57,14 @@ print(data.head(5))
 
 data = data.dropna() # we have to drop rows with null values at this point or they will cause problems later.
 print(data.shape)
+
+
+
+
+#  SUBSET
+data_subset = data[(data['Date']>datetime.date(2019,1,1)) & (data['Date']<datetime.date(2019,12,31))]
+print(data_subset.head(5))
+print(data_subset.shape)
 
 # STOPWORDS - It's a little trickier here. Note: "lambda x" is just a fancy, compact way of applying a function to every value in the column
 stop = stopwords.words('english')
