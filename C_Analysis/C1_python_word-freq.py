@@ -5,9 +5,7 @@
 #
 ########################################################################################################################
 
-#file_name = './sample-text/declaration_of_ind.txt'
-#file_name = './sample-text/1993-Clinton.txt'
-#file_name = './sample-text/2001-GWBush-1.txt'
+
 
 
 
@@ -19,8 +17,10 @@ from nltk.stem import WordNetLemmatizer # converts words to their lemma (standar
 from nltk import FreqDist  # allows us to report frequency of words in text
 
 
-file_name = './sample-text/demo-text.txt'
-
+#file_name = './sample-text/demo-text.txt'
+#file_name = './sample-text/declaration_of_ind.txt'
+#file_name = './sample-text/1993-Clinton.txt'
+file_name = './sample-text/2001-GWBush-1.txt'
 
 with open(file_name, 'r') as file:
   text = file.read()
@@ -77,6 +77,7 @@ stemmed_text = word_tokenize(stemmed_text)
 freq_stem = FreqDist(stemmed_text)
 print("STEMMED WORDS")
 print (freq_stem.most_common(5))
+
 
 print('\n')
 lemmatized_text = word_tokenize(lemmatized_text)
